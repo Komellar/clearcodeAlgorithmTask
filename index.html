@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zadanie FE Academy JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <main class="content">
+        <h1 class="title">Clearcode Frontend Academy JavaScript 2022</h1>
+        <h2 class="subtitle">Opcjonalne zadanie na "szóstkę" 😀</h2>
+        <h2>Zadanie:</h2>
+        <p class="paragraph">
+          Bez korzystania z zewnętrznych bibliotek pomocniczych zaprogramuj w pliku
+          <b>index.js</b> funkcję <b>compare</b>, która przyjmuje dwa argumenty
+          <b>prev</b> i <b>next</b> będące obiektami posiadającymi różne typy danych.
+          Wynikiem wywołania funkcji ma być obiekt, który wskaże za pomocą wartości
+          booleanowskich, które pola się zmieniły. Niezależnie czy w obiekcie
+          <b>next</b> względem <b>prev</b> zniknęły jakieś pola, pojawiły się nowe lub
+          zmieniła się ich wartość, pod danym kluczem wynikowego obiektu powinna
+          widnieć wartość <b>true</b>, w przeciwnym wypadku <b>false</b>. Poprawnie
+          wykonane zadanie powinno przejść wszystkie dołączone do codesandboxa testy.
+          <b>Uwaga</b>: W przypadku tablicy obiektów, zamiast zwrócić po prostu <b>true</b>,
+          jeżeli jakiś obiekt doszedł lub został usunięty z tablicy, funkcja powinna przejść
+          przez te obiekty i dla każdego klucza zwócić odpowiednią dla niego wartość - <b>true</b> lub <b>false</b>.
+        </p>
+        <p class="paragraph">
+          Przykład (w razie problemów z wyświetleniem poniższych obiektów na Codesandbox, spróbuj odświeżyć okienko w zakładce browser ;)):
+        </p>
+        <p>
+        <h3>Obiekt PREV</h3>
+        <pre id="prev"></pre>
+        </p>
+        <p>
+        <h3>Obiekt NEXT</h3>
+        <pre id="next"></pre>
+        </p>
+        <p>
+        <h3>Wynik operacji</h3>
+        <pre id="result"></pre>
+        </p>
+      </main>
+    </div>
+  </body>
+  <script>
+    const prev = {
+      uuid: "1013251d",
+      name: "Campaign 1",
+      total_budget_amount: 123456700,
+      start_date: "2022-03-11T13:37:37Z",
+      end_date: "2022-03-31T12:37:37Z",
+      active: true,
+      agency: {
+        uuid: "b6ca2ee1",
+        name: "Agency 1",
+        tags: ["one", "two"],
+        accounts: 2
+      },
+      line_items: [
+        {
+          uuid: "1ab24a77",
+          name: "Line Item #1",
+          type: "DISPLAY",
+          whitelist: ["https://google.com", "https://yahoo.com"],
+          active: false,
+          budget_amount: 12345600,
+          payment_model: {
+            uuid: "1a5f0a9b-b3a8-43e0-b0d7-419e70ab929c",
+            name: "CPC",
+            code: "CPC"
+          }
+        }
+      ]
+    };
+    
+    const next = {
+      uuid: "1013251d",
+      name: "Campaign 2",
+      total_budget_amount: 2423,
+      start_date: "2022-03-11T13:37:37Z",
+      end_date: "2022-03-31T12:37:37Z",
+      active: false,
+      agency: {
+        uuid: "b6ca2ee1",
+        name: "Agency 1",
+        tags: ["one", "two", "three"],
+        accounts: 2
+      },
+      line_items: [
+        {
+          uuid: "1ab24a77",
+          name: "Line Item #1",
+          type: "VIDEO",
+          whitelist: ["https://yahoo.com"],
+          active: false,
+          budget_amount: 12345600,
+          payment_model: {
+            uuid: "1a5f0a9b",
+            name: "CPC",
+            code: "CPC"
+          }
+        },
+        {
+          uuid: "2bb02s125",
+          name: "Line Item #2",
+          type: "VIDEO",
+          whitelist: ["https://yahoo.com"],
+          active: true,
+          budget_amount: 58890,
+          payment_model: {
+            uuid: "1a5f0a9b",
+            name: "CPV",
+            code: "CPV"
+          }
+        }
+      ]
+    };
+    
+    const result = {
+      uuid: false,
+      name: true,
+      total_budget_amount: true,
+      start_date: false,
+      end_date: false,
+      active: true,
+      agency: { uuid: false, name: false, tags: true, accounts: false },
+      line_items: [
+        {
+          uuid: false,
+          name: false,
+          type: true,
+          whitelist: true,
+          active: false,
+          budget_amount: false,
+          payment_model: {
+            uuid: false,
+            name: false,
+            code: false
+          }
+        },
+        {
+          uuid: true,
+          name: true,
+          type: true,
+          whitelist: true,
+          active: true,
+          budget_amount: true,
+          payment_model: {
+            uuid: true,
+            name: true,
+            code: true
+          }
+        }
+      ]
+    };
+    
+    document.getElementById("prev").innerHTML = JSON.stringify(prev, null, 2);
+    document.getElementById("next").innerHTML = JSON.stringify(next, null, 2);
+    document.getElementById("result").innerHTML = JSON.stringify(
+      result,
+      null,
+      2
+    );
+  </script>
+</html>
