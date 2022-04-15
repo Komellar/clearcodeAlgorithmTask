@@ -45,7 +45,11 @@
       </main>
     </div>
   </body>
+  <script src="src/index.js" ></script>
   <script>
+    // console.log('dd');
+    // import compare from './src/index.js'
+    // const {compare} = require('./src/index.js');
     const prev = {
       uuid: "1013251d",
       name: "Campaign 1",
@@ -59,21 +63,21 @@
         tags: ["one", "two"],
         accounts: 2
       },
-      line_items: [
-        {
-          uuid: "1ab24a77",
-          name: "Line Item #1",
-          type: "DISPLAY",
-          whitelist: ["https://google.com", "https://yahoo.com"],
-          active: false,
-          budget_amount: 12345600,
-          payment_model: {
-            uuid: "1a5f0a9b-b3a8-43e0-b0d7-419e70ab929c",
-            name: "CPC",
-            code: "CPC"
-          }
-        }
-      ]
+      // line_items: [
+      //   {
+      //     uuid: "1ab24a77",
+      //     name: "Line Item #1",
+      //     type: "DISPLAY",
+      //     whitelist: ["https://google.com", "https://yahoo.com"],
+      //     active: false,
+      //     budget_amount: 12345600,
+      //     payment_model: {
+      //       uuid: "1a5f0a9b-b3a8-43e0-b0d7-419e70ab929c",
+      //       name: "CPC",
+      //       code: "CPC"
+      //     }
+      //   }
+      // ]
     };
     
     const next = {
@@ -89,72 +93,72 @@
         tags: ["one", "two", "three"],
         accounts: 2
       },
-      line_items: [
-        {
-          uuid: "1ab24a77",
-          name: "Line Item #1",
-          type: "VIDEO",
-          whitelist: ["https://yahoo.com"],
-          active: false,
-          budget_amount: 12345600,
-          payment_model: {
-            uuid: "1a5f0a9b",
-            name: "CPC",
-            code: "CPC"
-          }
-        },
-        {
-          uuid: "2bb02s125",
-          name: "Line Item #2",
-          type: "VIDEO",
-          whitelist: ["https://yahoo.com"],
-          active: true,
-          budget_amount: 58890,
-          payment_model: {
-            uuid: "1a5f0a9b",
-            name: "CPV",
-            code: "CPV"
-          }
-        }
-      ]
+      // line_items: [
+      //   {
+      //     uuid: "1ab24a77",
+      //     name: "Line Item #1",
+      //     type: "VIDEO",
+      //     whitelist: ["https://yahoo.com"],
+      //     active: false,
+      //     budget_amount: 12345600,
+      //     payment_model: {
+      //       uuid: "1a5f0a9b",
+      //       name: "CPC",
+      //       code: "CPC"
+      //     }
+      //   },
+      //   {
+      //     uuid: "2bb02s125",
+      //     name: "Line Item #2",
+      //     type: "VIDEO",
+      //     whitelist: ["https://yahoo.com"],
+      //     active: true,
+      //     budget_amount: 58890,
+      //     payment_model: {
+      //       uuid: "1a5f0a9b",
+      //       name: "CPV",
+      //       code: "CPV"
+      //     }
+      //   }
+      // ]
     };
     
     const result = {
       uuid: false,
-      name: true,
-      total_budget_amount: true,
-      start_date: false,
-      end_date: false,
-      active: true,
+      // name: true,
+      // total_budget_amount: true,
+      // start_date: false,
+      // end_date: false,
+      // active: true,
       agency: { uuid: false, name: false, tags: true, accounts: false },
-      line_items: [
-        {
-          uuid: false,
-          name: false,
-          type: true,
-          whitelist: true,
-          active: false,
-          budget_amount: false,
-          payment_model: {
-            uuid: false,
-            name: false,
-            code: false
-          }
-        },
-        {
-          uuid: true,
-          name: true,
-          type: true,
-          whitelist: true,
-          active: true,
-          budget_amount: true,
-          payment_model: {
-            uuid: true,
-            name: true,
-            code: true
-          }
-        }
-      ]
+      // line_items: [
+      //   {
+      //     uuid: false,
+      //     name: false,
+      //     type: true,
+      //     whitelist: true,
+      //     active: false,
+      //     budget_amount: false,
+      //     payment_model: {
+      //       uuid: false,
+      //       name: false,
+      //       code: false
+      //     }
+      //   },
+      //   {
+      //     uuid: true,
+      //     name: true,
+      //     type: true,
+      //     whitelist: true,
+      //     active: true,
+      //     budget_amount: true,
+      //     payment_model: {
+      //       uuid: true,
+      //       name: true,
+      //       code: true
+      //     }
+      //   }
+      // ]
     };
     
     document.getElementById("prev").innerHTML = JSON.stringify(prev, null, 2);
@@ -164,5 +168,11 @@
       null,
       2
     );
+
+    // const prev1 = { uid: "1q2w3e4r" };
+    // const next1 = { uid: "1q2w3e4r" };
+    // console.log(compare(prev1, next1));
+
+    // console.log('xdddddd');
   </script>
 </html>
