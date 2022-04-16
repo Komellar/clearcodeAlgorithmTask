@@ -125,40 +125,40 @@
     
     const result = {
       uuid: false,
-      // name: true,
-      // total_budget_amount: true,
-      // start_date: false,
-      // end_date: false,
-      // active: true,
+      name: true,
+      total_budget_amount: true,
+      start_date: false,
+      end_date: false,
+      active: true,
       agency: { uuid: false, name: false, tags: true, accounts: false },
-      // line_items: [
-      //   {
-      //     uuid: false,
-      //     name: false,
-      //     type: true,
-      //     whitelist: true,
-      //     active: false,
-      //     budget_amount: false,
-      //     payment_model: {
-      //       uuid: false,
-      //       name: false,
-      //       code: false
-      //     }
-      //   },
-      //   {
-      //     uuid: true,
-      //     name: true,
-      //     type: true,
-      //     whitelist: true,
-      //     active: true,
-      //     budget_amount: true,
-      //     payment_model: {
-      //       uuid: true,
-      //       name: true,
-      //       code: true
-      //     }
-      //   }
-      // ]
+      line_items: [
+        {
+          uuid: false,
+          name: false,
+          type: true,
+          whitelist: true,
+          active: false,
+          budget_amount: false,
+          payment_model: {
+            uuid: false,
+            name: false,
+            code: false
+          }
+        },
+        {
+          uuid: true,
+          name: true,
+          type: true,
+          whitelist: true,
+          active: true,
+          budget_amount: true,
+          payment_model: {
+            uuid: true,
+            name: true,
+            code: true
+          }
+        }
+      ]
     };
     
     document.getElementById("prev").innerHTML = JSON.stringify(prev, null, 2);
